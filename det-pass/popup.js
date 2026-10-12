@@ -75,7 +75,8 @@ async function derivePassword(secret, site, length = 12, iterations = 100000) {
 // Copy to clipboard
 function copyPassword(pwd) {
   navigator.clipboard.writeText(pwd).then(() => {
-    clickText.textContent = 'COPIED';
+    chrome.runtime.sendMessage({ type: 'scheduleClipboardClear' });
+    clickText.textContent = 'COPIED · CLEARS IN 30S';
     clickText.classList.add('copied');
     setTimeout(() => {
       clickText.textContent = 'CLICK TO COPY';

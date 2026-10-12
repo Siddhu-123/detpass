@@ -3,7 +3,10 @@
   "name": "Secret Password Generator",
   "version": "1.0",
   "description": "Generate site passwords anytime with your little secret",
-  "permissions": ["activeTab", "scripting"],
+  "permissions": ["activeTab", "scripting", "alarms", "offscreen"],
+  "background": {
+    "service_worker": "background.js"
+  },
   "action": {
     "default_popup": "popup.html",
     "default_icon": {

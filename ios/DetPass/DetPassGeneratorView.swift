@@ -1,5 +1,6 @@
 import SwiftUI
 import UIKit
+import UniformTypeIdentifiers
 
 struct DetPassGeneratorView: View {
     @State private var secret = ""
@@ -127,7 +128,13 @@ struct DetPassGeneratorView: View {
 
     private func copyPassword() {
         guard let password else { return }
-        UIPasteboard.general.string = password
+        UIPasteboard.general.setItems(
+            [[UTType.plainText.identifier: password]],
+            options: [
+                .localOnly: true,
+                .expirationDate: Date().addingTimeInterval(30)
+            ]
+        )
         statusText = "COPIED"
         copied = true
 
