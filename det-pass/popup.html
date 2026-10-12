@@ -1,0 +1,26 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Deterministic Password — No Save</title>
+  <link rel="stylesheet" href="popup.css" />
+</head>
+<body>
+  <div class="ani1"></div>
+  <div class="ani2"></div>
+  <div class="gridclass">
+    <input class="group1" id="secret" type="password" placeholder="Your secret" autocomplete="off" />
+    <input class="group2" id="site" type="text" placeholder="example.com" autocomplete="off" />
+    <button id="gen" class="gen">
+      <p id="gene">Generate</p>
+      <img id="icon" src="icons/kitty-transparent.gif" alt="icon"/>
+    </button>
+    <div class="group3">
+      <div id="pass" aria-live="polite"></div>
+    </div>
+    <p id="click" class="click">CLICK TO COPY</p>
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>
